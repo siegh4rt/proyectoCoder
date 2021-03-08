@@ -1,0 +1,406 @@
+@import "mixins";
+@import "variables";
+@import "keyframes";
+
+body {
+  font-family: $primary-font;
+  font-weight: 100;
+}
+
+* {
+  padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  font-size: 27px;
+}
+
+header {
+  background: $white;
+}
+
+.search {
+  padding: 20px 0;
+
+  @if $flex == flex {
+    display: $flex;
+    @include flexProperties(
+      unquote(alignItems),
+      column,
+      unquote(justifiContent)
+    );
+  }
+}
+
+img {
+  width: 100%;
+
+  .photo & {
+    width: 500px;
+    left: -101px;
+    position: relative;
+    height: 100%;
+  }
+}
+
+.form {
+  margin: 50px;
+
+  h1 {
+    @include textAligtn(center);
+    margin: 20px 0;
+  }
+
+  .photo {
+    width: 300px;
+    height: 300px;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    border-radius: 163px;
+    margin: 0 auto;
+
+    label {
+      position: absolute;
+      color: #fff;
+      font-weight: 900;
+      font-size: 39px;
+      text-shadow: 2px 2px 2px black;
+      top: 41%;
+      left: 0;
+      right: 0;
+      @include textAligtn(center);
+    }
+  }
+
+  button {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 20px auto;
+    @include flexProperties(center, column, center);
+  }
+}
+
+.text-align {
+  @include textAligtn(center);
+}
+
+.navbar-brand {
+  width: 57%;
+}
+
+button.navbar-toggler {
+  width: initial;
+}
+
+input {
+  box-sizing: border-box;
+  width: 100%;
+  margin-bottom: 20px;
+  border: 1px solid;
+  padding: 5px;
+}
+
+button {
+  width: 100%;
+  background: $green-confirm;
+  border: none;
+  border-radius: 3px;
+  color: $white;
+  padding: 5px 0;
+}
+
+.box-features {
+  display: flex;
+  @include flexProperties(unquote(alignItems), column, space-between);
+
+  .box {
+    border-radius: 3px;
+    color: $white;
+    padding: 80px 20px;
+    margin-bottom: 10px;
+    flex-grow: 1;
+    @include textAligtn(center);
+
+    &:nth-child(1) {
+      background: $gradient-green;
+    }
+
+    &:nth-child(2) {
+      background: $gradient-purple;
+    }
+
+    &:nth-child(3) {
+      background: $gradient-blue;
+    }
+
+    p {
+      font-size: 16px;
+    }
+  }
+
+  &.features_suscription {
+    .box {
+      background: $gray-light;
+      color: $black;
+      border: 1px solid $gray;
+      flex-basis: 100%;
+
+      &:nth-child(1) {
+        h5 {
+          color: $bronce;
+        }
+      }
+      &:nth-child(2) {
+        h5 {
+          color: $gold;
+        }
+      }
+      &:nth-child(3) {
+        h5 {
+          color: $platinum;
+        }
+      }
+    }
+
+    p {
+      @include textAligtn(center);
+    }
+  }
+}
+
+.reservas {
+  .box {
+    border: 1px solid $gray;
+    margin-bottom: 20px;
+
+    a {
+      display: flex;
+      text-decoration: none;
+      @include flexProperties(
+        unquote(alignItems),
+        column,
+        unquote(justifiContent)
+      );
+
+      .caption {
+        padding: 20px;
+        flex-shrink: 2;
+        @include textAligtn(center);
+        font-size: 19px;
+
+        p {
+          color: $black;
+          font-size: 19px;
+
+          &:first-child {
+            font-weight: 900;
+          }
+        }
+      }
+
+      .img {
+        flex-basis: 68%;
+      }
+    }
+  }
+}
+
+h2 {
+  @include textAligtn(center);
+  color: $black;
+  margin-bottom: 60px;
+}
+
+hr {
+  margin: 50px 0;
+}
+
+footer {
+  background: $black;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  color: $white;
+  font-size: 12px;
+  padding: 50px;
+  position: fixed;
+  @include flexProperties(unquote(alignItems), column, center);
+}
+
+@media (min-width: 640px) {
+  .navbar-brand {
+    width: 31%;
+  }
+
+  .navbar-collapse {
+    padding: 0 50px;
+  }
+}
+
+@media (min-width: 768px) {
+  img {
+    .photo & {
+      height: 300px;
+    }
+  }
+
+  .navbar-brand {
+    width: initial;
+  }
+
+  .navbar-collapse--direction {
+    justify-content: flex-end;
+  }
+
+  .carousel-inner {
+    .carousel-item {
+      .carousel-caption {
+        bottom: 0rem;
+        background: $black;
+        opacity: 0.6;
+        width: 100%;
+        left: 0;
+        right: 0;
+      }
+    }
+  }
+
+  .search {
+    margin: 50px 0;
+    @include flexProperties(unquote(alignItems), row, unquote(justifiContent));
+  }
+
+  input {
+    margin-right: 10px;
+  }
+
+  button {
+    height: 53px;
+  }
+
+  .box-features {
+    flex-direction: row;
+    margin: 60px 0;
+
+    .box {
+      margin-right: 10px;
+
+      &:hover {
+        transform: scale(1.1);
+        transition: all 0.4s ease-in-out;
+      }
+    }
+  }
+
+  .navbar-collapse {
+    padding: 0 22px;
+  }
+}
+
+@media (min-width: 960px) {
+  .reservas {
+    .box {
+      a {
+        display: flex;
+        @include flexProperties(
+          unquote(alignItems),
+          row,
+          unquote(justifiContent)
+        );
+        text-decoration: none;
+
+        .img {
+          flex-basis: 68%;
+          overflow: hidden;
+          max-height: 371px;
+          max-width: 280px;
+
+          img {
+            width: 575px;
+            position: relative;
+            top: 0;
+            left: -145px;
+          }
+        }
+
+        .caption {
+          display: flex;
+          @include flexProperties(center, column, space-around);
+
+          button {
+            width: 200px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .navbar-collapse {
+    padding: 0;
+  }
+}
+
+@media (min-width: 1236px) {
+  .carousel-inner--height {
+    height: 630px;
+  }
+
+  .carousel-inner {
+    .carousel-item {
+      .carousel-caption {
+        bottom: 6.8rem;
+      }
+
+      img {
+        top: -182px;
+        position: relative;
+      }
+    }
+  }
+}
+
+@media (min-width: 1440px) {
+}
+
+@media (min-width: 1500px) {
+  .carousel-inner {
+    .carousel-item {
+      .carousel-caption {
+        bottom: 10.8rem;
+      }
+    }
+  }
+}
+
+@media (min-width: 1650px) {
+  .carousel-inner {
+    .carousel-item {
+      .carousel-caption {
+        bottom: 13.8rem;
+      }
+    }
+  }
+}
+
+@media (min-width: 1810px) {
+  .carousel-inner {
+    .carousel-item {
+      .carousel-caption {
+        bottom: 20.4rem;
+      }
+    }
+  }
+}
+
+@media (min-width: 1920px) {
+  .carousel-inner {
+    .carousel-item {
+      .carousel-caption {
+        bottom: 16.4rem;
+      }
+    }
+  }
+}

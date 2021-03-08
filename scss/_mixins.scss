@@ -1,0 +1,15 @@
+@import "variables";
+
+@mixin textAligtn($align) {
+  text-align: $align;
+}
+
+@mixin flexProperties(
+  $alignItems: "",
+  $flexDirection: "",
+  $justifiContent: ""
+) {
+  align-items: $alignItems;
+  flex-direction: $flexDirection;
+  justify-content: $justifiContent;
+}
