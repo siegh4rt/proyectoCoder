@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,600;1,300&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/components.js"></script>
+    <title>My Trip</title>
+  </head>
+  <body>
+    <header id="nav-partial"></header>
+    <section>
+      <div
+        id="carouselExampleCaptions"
+        class="carousel slide"
+        data-bs-ride="carousel"
+      >
+        <div class="carousel-indicators">
+          <button
+            type="button"
+            data-bs-target="#carouselExampleCaptions"
+            data-bs-slide-to="0"
+            class="active"
+            aria-current="true"
+            aria-label="Slide 1"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselExampleCaptions"
+            data-bs-slide-to="1"
+            aria-label="Slide 2"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselExampleCaptions"
+            data-bs-slide-to="2"
+            aria-label="Slide 3"
+          ></button>
+        </div>
+        <div class="carousel-inner carousel-inner--height">
+          <div class="carousel-item active">
+            <img src="assets/1.jpg" class="d-block w-100" alt="paris" />
+            <div class="carousel-caption d-none d-md-block">
+              <h5>First slide label</h5>
+              <p>
+                Some representative placeholder content for the first slide.
+              </p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="assets/2.png" class="d-block w-100" alt="italy" />
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Second slide label</h5>
+              <p>
+                Some representative placeholder content for the second slide.
+              </p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="assets/3.jpg" class="d-block w-100" alt="new zealand" />
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Third slide label</h5>
+              <p>
+                Some representative placeholder content for the third slide.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="container">
+      <section>
+        <div class="search">
+          <input type="text" placeholder="parametro 1" />
+          <input type="text" placeholder="parametro 2" />
+          <input type="text" placeholder="parametro 3" />
+          <button>Buscar</button>
+        </div>
+      </section>
+      <section class="box-features">
+        <article class="box">
+          News
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
+            enim arcu, auctor in mauris in, posuere finibus leo. Fusce sagittis
+            ac lectus sit amet commodo.
+          </p>
+        </article>
+        <article class="box">
+          Promos
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
+            enim arcu, auctor in mauris in, posuere finibus leo. Fusce sagittis
+            ac lectus sit amet commodo.
+          </p>
+        </article>
+        <article class="box">
+          Intereses
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
+            enim arcu, auctor in mauris in, posuere finibus leo. Fusce sagittis
+            ac lectus sit amet commodo.
+          </p>
+        </article>
+      </section>
+      <hr />
+      <section>
+        <h2>Hazte miembro de trip !</h2>
+        <p class="text-align">
+          usce accumsan placerat faucibus mollis cubilia ac felis tempor, luctus
+          porttitor lectus nisl dui leo nulla, litora duis aptent montes est
+          justo sapien
+        </p>
+        <div class="box-features features_suscription">
+          <article class="box">
+            <h5>Bronce</h5>
+            <span>10% descuento equipaje</span>
+            <p>5% descuento transporte desde aeropuerto llegada a destino</p>
+            <button>comprar</button>
+          </article>
+          <article class="box">
+            <h5>Oro</h5>
+            <span>20% descuento equipaje</span>
+            <p>15% descuento transporte desde aeropuerto llegada a destino</p>
+            <button>comprar</button>
+          </article>
+          <article class="box">
+            <h5>Platino</h5>
+            <span>30% descuento equipaje</span>
+            <p>transporte gratis desde aeropuerto llegada a destino</p>
+            <button>comprar</button>
+          </article>
+        </div>
+      </section>
+    </div>
+    <footer>
+      My Trip copyright 2021
+    </footer>
+  </body>
+</html>
