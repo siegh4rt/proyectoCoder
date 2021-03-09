@@ -23,9 +23,9 @@ header {
   @if $flex == flex {
     display: $flex;
     @include flexProperties(
-      unquote(alignItems),
-      column,
-      unquote(justifiContent)
+    unquote(alignItems),
+    column,
+    unquote(justifiContent)
     );
   }
 }
@@ -177,9 +177,9 @@ button {
       display: flex;
       text-decoration: none;
       @include flexProperties(
-        unquote(alignItems),
-        column,
-        unquote(justifiContent)
+      unquote(alignItems),
+      column,
+      unquote(justifiContent)
       );
 
       .caption {
@@ -223,7 +223,6 @@ footer {
   color: $white;
   font-size: 12px;
   padding: 50px;
-  position: fixed;
   @include flexProperties(unquote(alignItems), column, center);
 }
 
@@ -303,9 +302,9 @@ footer {
       a {
         display: flex;
         @include flexProperties(
-          unquote(alignItems),
-          row,
-          unquote(justifiContent)
+        unquote(alignItems),
+        row,
+        unquote(justifiContent)
         );
         text-decoration: none;
 

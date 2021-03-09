@@ -154,7 +154,6 @@ footer {
   color: #ffff;
   font-size: 12px;
   padding: 50px;
-  position: fixed;
   align-items: alignItems;
   flex-direction: column;
   justify-content: center; }
