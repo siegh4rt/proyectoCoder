@@ -213,7 +213,7 @@ footer {
   .navbar-collapse--direction {
     justify-content: flex-end; }
   .carousel-inner .carousel-item .carousel-caption {
-    bottom: 0rem;
+    bottom: 0;
     background: #242424;
     opacity: 0.6;
     width: 100%;
@@ -303,25 +303,22 @@ footer {
     flex-direction: row; }
   .carousel-inner--height {
     height: 630px; }
-  .carousel-inner .carousel-item .carousel-caption {
-    bottom: 6.8rem; }
   .carousel-inner .carousel-item img {
-    top: -182px;
-    position: relative; } }
+    max-height: 629px; } }
 
-@media (min-width: 1500px) {
+@media (min-width: 1700px) {
+  .carousel-inner .carousel-item img {
+    max-height: 100%;
+    height: 100%;
+    position: relative;
+    bottom: 74px; }
   .carousel-inner .carousel-item .carousel-caption {
-    bottom: 10.8rem; } }
+    bottom: 325px; } }
 
-@media (min-width: 1650px) {
+@media (min-width: 1750px) {
   .carousel-inner .carousel-item .carousel-caption {
-    bottom: 13.8rem; } }
-
-@media (min-width: 1810px) {
-  .carousel-inner .carousel-item .carousel-caption {
-    bottom: 20.4rem; } }
+    bottom: 350px; } }
 
 @media (min-width: 1920px) {
   .carousel-inner .carousel-item .carousel-caption {
-    bottom: 3.4rem;
-    position: fixed; } }
+    bottom: 450px; } }
