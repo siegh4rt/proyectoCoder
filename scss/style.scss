@@ -285,11 +285,6 @@ footer {
   font-size: 12px;
   padding: 50px;
   @include textAligtn(center);
-
-  &.footer__custom {
-    bottom: 0;
-    position: absolute;
-  }
 }
 
 @media (min-width: 640px) {
@@ -468,6 +463,13 @@ footer {
 
   .navbar-collapse {
     padding: 0;
+  }
+
+  footer {
+    &.footer__custom {
+      bottom: 0;
+      position: absolute;
+    }
   }
 }
 
