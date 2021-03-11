@@ -19,7 +19,7 @@
     <header id="nav-partial"></header>
     <div class="container">
       <section>
-        <div class="form">
+        <div class="form form__contact">
           <div class="group">
             <label>tipo de mensaje</label>
             <select>
@@ -37,20 +37,18 @@
             <textarea>escribe el mensaje</textarea>
           </div>
           <h3>desea recibir una copia de este mensaje en su email?</h3>
-          <input type="checkbox" id="check" name="si" value="si" />
-          <label for="check">si</label><br />
-          <button class="green-action">Enviar</button>
-          <button>limpiar formulario</button>
+          <div class="group group__flex-direction">
+            <input type="checkbox" id="check" name="si" value="si" />
+            <label for="check">si</label>
+          </div>
+          <div class="group group__area-buttons">
+            <button>Enviar</button>
+            <button>limpiar formulario</button>
+          </div>
         </div>
       </section>
-      <section>
-          <h6>Mapa del sitio</h6>
-          <a href="perfil.html">Perfil de usuario</a>
-          <a href="reservas"> reservas</a>
-          <a href="contacto">Contacto</a>
-      </section>
     </div>
-    <footer>
+    <footer class="footer__custom">
       My Trip copyright 2021
     </footer>
   </body>

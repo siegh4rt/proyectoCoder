@@ -8,6 +8,12 @@ body {
   margin: 0;
   font-size: 27px; }
 
+h1 {
+  font-size: 24px; }
+
+h3 {
+  font-size: 18px; }
+
 header {
   background: #ffff; }
 
@@ -26,37 +32,62 @@ img {
     position: relative;
     height: 100%; }
 
-.form {
-  margin: 50px; }
-  .form h1 {
-    text-align: center;
-    margin: 20px 0; }
-  .form .photo {
-    width: 300px;
-    height: 300px;
-    overflow: hidden;
-    position: relative;
-    display: flex;
-    border-radius: 163px;
-    margin: 0 auto; }
-    .form .photo label {
-      position: absolute;
-      color: #fff;
-      font-weight: 900;
-      font-size: 39px;
-      text-shadow: 2px 2px 2px black;
-      top: 41%;
-      left: 0;
-      right: 0;
-      text-align: center; }
-  .form button {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    margin: 20px auto;
+.form h1 {
+  text-align: center;
+  margin: 20px 0; }
+
+.form .photo {
+  width: 279px;
+  height: 279px;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  border-radius: 163px;
+  margin: 20px auto; }
+  .form .photo label {
+    position: absolute;
+    color: #fff;
+    font-weight: 900;
+    font-size: 39px;
+    text-shadow: 2px 2px 2px black;
+    top: 41%;
+    left: 0;
+    right: 0;
+    text-align: center; }
+
+.form button {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 20px auto;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center; }
+
+.form__contact .group {
+  display: flex;
+  margin: 20px 0;
+  align-items: alignItems;
+  flex-direction: column;
+  justify-content: justifiContent; }
+  .form__contact .group label {
+    font-size: 18px;
+    margin-bottom: 2px; }
+  .form__contact .group select,
+  .form__contact .group input,
+  .form__contact .group textarea {
+    border-color: #b4b4b4;
+    font-size: 18px;
+    padding: 5px; }
+  .form__contact .group select {
+    background: #ffff; }
+  .form__contact .group__flex-direction {
     align-items: center;
-    flex-direction: column;
-    justify-content: center; }
+    flex-direction: row-reverse;
+    justify-content: flex-end; }
+    .form__contact .group__flex-direction input {
+      flex-basis: 10%;
+      margin: 0; }
 
 .text-align {
   text-align: center; }
@@ -80,7 +111,11 @@ button {
   border: none;
   border-radius: 3px;
   color: #ffff;
-  padding: 5px 0; }
+  padding: 5px 0;
+  transition: 0.3s; }
+  button:hover {
+    background: #39a594;
+    border-radius: 100px; }
 
 .box-features {
   display: flex;
@@ -101,7 +136,8 @@ button {
     .box-features .box:nth-child(3) {
       background: linear-gradient(to bottom left, #227fa3, #154d63); }
     .box-features .box p {
-      font-size: 16px; }
+      font-size: 16px;
+      margin-top: 1rem; }
   .box-features.features_suscription .box {
     background: #f9f9f9;
     color: #242424;
@@ -113,6 +149,11 @@ button {
       color: #dbae1a; }
     .box-features.features_suscription .box:nth-child(3) h5 {
       color: #b4b4b4; }
+    .box-features.features_suscription .box .photo {
+      width: 228px;
+      height: 228px; }
+      .box-features.features_suscription .box .photo label {
+        font-size: 26px; }
   .box-features.features_suscription p {
     text-align: center; }
 
@@ -150,13 +191,13 @@ footer {
   background: #242424;
   bottom: 0;
   width: 100%;
-  display: flex;
   color: #ffff;
   font-size: 12px;
   padding: 50px;
-  align-items: alignItems;
-  flex-direction: column;
-  justify-content: center; }
+  text-align: center; }
+  footer.footer__custom {
+    bottom: 0;
+    position: absolute; }
 
 @media (min-width: 640px) {
   .navbar-brand {
@@ -188,15 +229,34 @@ footer {
   button {
     height: 53px; }
   .box-features {
-    flex-direction: row;
+    flex-direction: column;
     margin: 60px 0; }
     .box-features .box {
+      flex-basis: 30%;
       margin-right: 10px; }
       .box-features .box:hover {
         transform: scale(1.1);
         transition: all 0.4s ease-in-out; }
+    .box-features.features_suscription .box .photo {
+      width: 300px;
+      height: 300px; }
+      .box-features.features_suscription .box .photo label {
+        font-size: 35px; }
   .navbar-collapse {
-    padding: 0 22px; } }
+    padding: 0 22px; }
+  .form__contact .group select {
+    background: #ffff;
+    width: 50%; }
+  .form__contact .group__flex-direction {
+    align-items: center;
+    flex-direction: row-reverse;
+    justify-content: flex-end; }
+    .form__contact .group__flex-direction input {
+      flex-basis: 10%;
+      margin: 0; }
+    .form__contact .group__flex-direction button {
+      flex-basis: 40%;
+      margin: 0; } }
 
 @media (min-width: 960px) {
   .reservas .box a {
@@ -224,10 +284,23 @@ footer {
         width: 200px; } }
 
 @media (min-width: 1024px) {
+  .box-features {
+    flex-direction: row;
+    margin: 60px 0; }
+    .box-features.features_suscription {
+      flex-direction: column; }
+  .form__contact .group__area-buttons {
+    flex-direction: row;
+    justify-content: space-between; }
+    .form__contact .group__area-buttons button {
+      margin: 20px 0;
+      flex-basis: 40%; }
   .navbar-collapse {
     padding: 0; } }
 
 @media (min-width: 1236px) {
+  .box-features.features_suscription {
+    flex-direction: row; }
   .carousel-inner--height {
     height: 630px; }
   .carousel-inner .carousel-item .carousel-caption {

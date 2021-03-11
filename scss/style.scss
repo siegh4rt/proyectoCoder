@@ -13,6 +13,14 @@ body {
   font-size: 27px;
 }
 
+h1 {
+  font-size: 24px;
+}
+
+h3 {
+  font-size: 18px;
+}
+
 header {
   background: $white;
 }
@@ -23,9 +31,9 @@ header {
   @if $flex == flex {
     display: $flex;
     @include flexProperties(
-    unquote(alignItems),
-    column,
-    unquote(justifiContent)
+      unquote(alignItems),
+      column,
+      unquote(justifiContent)
     );
   }
 }
@@ -42,21 +50,19 @@ img {
 }
 
 .form {
-  margin: 50px;
-
   h1 {
     @include textAligtn(center);
     margin: 20px 0;
   }
 
   .photo {
-    width: 300px;
-    height: 300px;
+    width: 279px;
+    height: 279px;
     overflow: hidden;
     position: relative;
     display: flex;
     border-radius: 163px;
-    margin: 0 auto;
+    margin: 20px auto;
 
     label {
       position: absolute;
@@ -77,6 +83,46 @@ img {
     justify-content: center;
     margin: 20px auto;
     @include flexProperties(center, column, center);
+  }
+
+  &__contact {
+    .group {
+      display: flex;
+      margin: 20px 0;
+      @include flexProperties(
+        unquote(alignItems),
+        column,
+        unquote(justifiContent)
+      );
+
+      label {
+        font-size: 18px;
+        margin-bottom: 2px;
+      }
+
+      select,
+      input,
+      textarea {
+        border-color: $platinum;
+        font-size: 18px;
+        padding: 5px;
+      }
+
+      select {
+        background: $white;
+      }
+
+      &__flex-direction {
+        align-items: center;
+        flex-direction: row-reverse;
+        justify-content: flex-end;
+
+        input {
+          flex-basis: 10%;
+          margin: 0;
+        }
+      }
+    }
   }
 }
 
@@ -107,6 +153,12 @@ button {
   border-radius: 3px;
   color: $white;
   padding: 5px 0;
+  transition: 0.3s;
+
+  &:hover {
+    background: $hover-button;
+    border-radius: 100px;
+  }
 }
 
 .box-features {
@@ -135,6 +187,7 @@ button {
 
     p {
       font-size: 16px;
+      margin-top: 1rem;
     }
   }
 
@@ -160,6 +213,15 @@ button {
           color: $platinum;
         }
       }
+
+      .photo {
+        width: 228px;
+        height: 228px;
+
+        label {
+          font-size: 26px;
+        }
+      }
     }
 
     p {
@@ -177,9 +239,9 @@ button {
       display: flex;
       text-decoration: none;
       @include flexProperties(
-      unquote(alignItems),
-      column,
-      unquote(justifiContent)
+        unquote(alignItems),
+        column,
+        unquote(justifiContent)
       );
 
       .caption {
@@ -219,11 +281,15 @@ footer {
   background: $black;
   bottom: 0;
   width: 100%;
-  display: flex;
   color: $white;
   font-size: 12px;
   padding: 50px;
-  @include flexProperties(unquote(alignItems), column, center);
+  @include textAligtn(center);
+
+  &.footer__custom {
+    bottom: 0;
+    position: absolute;
+  }
 }
 
 @media (min-width: 640px) {
@@ -278,10 +344,11 @@ footer {
   }
 
   .box-features {
-    flex-direction: row;
+    flex-direction: column;
     margin: 60px 0;
 
     .box {
+      flex-basis: 30%;
       margin-right: 10px;
 
       &:hover {
@@ -289,10 +356,50 @@ footer {
         transition: all 0.4s ease-in-out;
       }
     }
+
+    &.features_suscription {
+      .box {
+        .photo {
+          width: 300px;
+          height: 300px;
+
+          label {
+            font-size: 35px;
+          }
+        }
+      }
+    }
   }
 
   .navbar-collapse {
     padding: 0 22px;
+  }
+
+  .form {
+    &__contact {
+      .group {
+        select {
+          background: $white;
+          width: 50%;
+        }
+
+        &__flex-direction {
+          align-items: center;
+          flex-direction: row-reverse;
+          justify-content: flex-end;
+
+          input {
+            flex-basis: 10%;
+            margin: 0;
+          }
+
+          button {
+            flex-basis: 40%;
+            margin: 0;
+          }
+        }
+      }
+    }
   }
 }
 
@@ -302,9 +409,9 @@ footer {
       a {
         display: flex;
         @include flexProperties(
-        unquote(alignItems),
-        row,
-        unquote(justifiContent)
+          unquote(alignItems),
+          row,
+          unquote(justifiContent)
         );
         text-decoration: none;
 
@@ -336,12 +443,41 @@ footer {
 }
 
 @media (min-width: 1024px) {
+  .box-features {
+    flex-direction: row;
+    margin: 60px 0;
+
+    &.features_suscription {
+      flex-direction: column;
+    }
+  }
+
+  .form {
+    &__contact {
+      .group__area-buttons {
+        flex-direction: row;
+        justify-content: space-between;
+
+        button {
+          margin: 20px 0;
+          flex-basis: 40%;
+        }
+      }
+    }
+  }
+
   .navbar-collapse {
     padding: 0;
   }
 }
 
 @media (min-width: 1236px) {
+  .box-features {
+    &.features_suscription {
+      flex-direction: row;
+    }
+  }
+
   .carousel-inner--height {
     height: 630px;
   }
