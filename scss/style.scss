@@ -31,9 +31,9 @@ header {
   @if $flex == flex {
     display: $flex;
     @include flexProperties(
-      unquote(alignItems),
-      column,
-      unquote(justifiContent)
+    unquote(alignItems),
+    column,
+    unquote(justifiContent)
     );
   }
 }
@@ -90,9 +90,9 @@ img {
       display: flex;
       margin: 20px 0;
       @include flexProperties(
-        unquote(alignItems),
-        column,
-        unquote(justifiContent)
+      unquote(alignItems),
+      column,
+      unquote(justifiContent)
       );
 
       label {
@@ -104,12 +104,10 @@ img {
       input,
       textarea {
         border-color: $platinum;
+        background: transparent;
+        color: $white;
         font-size: 18px;
         padding: 5px;
-      }
-
-      select {
-        background: $white;
       }
 
       &__flex-direction {
@@ -239,9 +237,9 @@ button {
       display: flex;
       text-decoration: none;
       @include flexProperties(
-        unquote(alignItems),
-        column,
-        unquote(justifiContent)
+      unquote(alignItems),
+      column,
+      unquote(justifiContent)
       );
 
       .caption {
@@ -283,8 +281,60 @@ footer {
   width: 100%;
   color: $white;
   font-size: 12px;
-  padding: 50px;
-  @include textAligtn(center);
+  padding: 6px;
+  margin-top: 50px;
+
+  p {
+    font-size: 12px;
+    text-align: center;
+    margin: 10px 0 0 0;
+  }
+
+  h2 {
+    color: $white;
+    margin-bottom: 45px;
+    font-size: 21px;
+  }
+}
+
+.wf-container {
+  margin: 0 auto;
+
+  &:before,
+  &::after {
+    content: '';
+    display: table;
+  }
+}
+
+.wf-container:after {
+  clear: both;
+}
+
+.wf-box {
+  margin: 10px;
+  border-radius: 6px;
+  overflow: hidden;
+
+  img {
+    display: block;
+    width: 100%;
+  }
+
+  .content {
+    border: 1px solid #ccc;
+    border-top-width: 0;
+    padding: 5px 8px;
+
+    p {
+      margin: 0;
+      font-size: 14px;
+    }
+  }
+}
+
+.wf-column {
+  float: left;
 }
 
 @media (min-width: 640px) {
@@ -334,8 +384,19 @@ footer {
     margin-right: 10px;
   }
 
+  .gallery {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
   button {
     height: 53px;
+
+    .gallery & {
+      width: 300px;
+      margin: 50px;
+    }
   }
 
   .box-features {
@@ -374,7 +435,6 @@ footer {
     &__contact {
       .group {
         select {
-          background: $white;
           width: 50%;
         }
 
@@ -396,6 +456,10 @@ footer {
       }
     }
   }
+
+  footer {
+    padding: 50px;
+  }
 }
 
 @media (min-width: 960px) {
@@ -404,9 +468,9 @@ footer {
       a {
         display: flex;
         @include flexProperties(
-          unquote(alignItems),
-          row,
-          unquote(justifiContent)
+        unquote(alignItems),
+        row,
+        unquote(justifiContent)
         );
         text-decoration: none;
 
