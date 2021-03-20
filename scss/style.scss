@@ -10,7 +10,7 @@ body {
   padding: 0;
   box-sizing: border-box;
   margin: 0;
-  font-size: 27px;
+  font-size: 18px;
 }
 
 h1 {
@@ -104,7 +104,7 @@ img {
       input,
       textarea {
         border-color: $platinum;
-        background: transparent;
+        background: #242424;
         color: $white;
         font-size: 18px;
         padding: 5px;
@@ -337,6 +337,23 @@ footer {
   float: left;
 }
 
+#upload {
+  opacity: 0;
+}
+
+.upload-photo {
+  border: 1px solid $green-confirm;
+  margin-top: 42px;
+}
+
+#upload-label {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: center;
+  width: 100%;
+}
+
 @media (min-width: 640px) {
   .navbar-brand {
     width: 31%;
@@ -391,7 +408,7 @@ footer {
   }
 
   button {
-    height: 53px;
+    height: 40px;
 
     .gallery & {
       width: 300px;

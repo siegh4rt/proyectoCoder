@@ -24,6 +24,44 @@
     <title>My Trip</title>
   </head>
   <body>
+    <div class="modal fade" id="modalComprar" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Proceso de compra</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form>
+                <div class="mb-3">
+                    <label for="recipient-name" class="col-form-label">Nombre y apellido</label>
+                    <input type="text" class="form-control" id="name">
+                </div>
+                <div class="mb-3">
+                    <label for="recipient-name" class="col-form-label">Tipo de documento</label>
+                    <select class="form-select">
+                        <option value="1">Pasaporte</option>
+                        <option value="2">C.C</option>
+                        <option value="3">C.E</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="recipient-name" class="col-form-label">Numero de cedula</label>
+                    <input type="number" class="form-control" id="cedula">
+                </div>
+                <div class="mb-3">
+                    <label for="recipient-name" class="col-form-label">Email</label>
+                    <input type="text" class="form-control" id="email">
+                </div>
+            </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button type="button">Continuar</button>
+            </div>
+            </div>
+        </div>
+    </div>
     <header id="nav-partial"></header>
     <section>
       <div
@@ -135,19 +173,19 @@
             <h5>Bronce</h5>
             <span>10% descuento equipaje</span>
             <p>5% descuento transporte desde aeropuerto llegada a destino</p>
-            <button>comprar</button>
+            <button data-bs-toggle="modal" data-bs-target="#modalComprar">comprar</button>
           </article>
           <article class="box">
             <h5>Oro</h5>
             <span>20% descuento equipaje</span>
             <p>15% descuento transporte desde aeropuerto llegada a destino</p>
-            <button>comprar</button>
+            <button data-bs-toggle="modal" data-bs-target="#modalComprar">comprar</button>
           </article>
           <article class="box">
             <h5>Platino</h5>
             <span>30% descuento equipaje</span>
             <p>transporte gratis desde aeropuerto llegada a destino</p>
-            <button>comprar</button>
+            <button data-bs-toggle="modal" data-bs-target="#modalComprar">comprar</button>
           </article>
         </div>
       </section>
@@ -215,8 +253,14 @@
                   </div>
             </div>
         </div>
-        <button class="text-align">Subir mi foto !</button>
-      </section>
+        <div class="input-group px-2 rounded-pill bg-white upload-photo">
+            <input id="upload" type="file" class="form-control border-0">
+            <label id="upload-label" for="upload" class="font-weight-light text-muted alignt-center">Subir foto</label>
+            <div class="input-group-append">
+                <label for="upload" class="btn btn-light m-0 rounded-pill px-4"> <i class="fa fa-cloud-upload mr-2 text-muted"></i></label>
+            </div>
+        </div>
+    </section>
     </div>
     <footer>
       <div class="container">

@@ -67,8 +67,8 @@ const contactForm = `
             <label for="check">si</label>
         </div>
         <div class="group group__area-buttons">
-            <button>Enviar</button>
             <button>limpiar formulario</button>
+            <button>Enviar</button>
         </div>
     </div>
 `;
@@ -109,7 +109,17 @@ document.addEventListener("DOMContentLoaded", function(event) {
         }
     }
 
-     
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+    
+            reader.onload = function (e) {
+                $('#imageResult')
+                    .attr('src', e.target.result);
+            };
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
 });
 
 
