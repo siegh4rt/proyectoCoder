@@ -245,6 +245,19 @@ footer {
   text-align: center;
   width: 100%; }
 
+.sitemap {
+  margin-bottom: 56px; }
+  .sitemap ul {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    padding: 0; }
+    .sitemap ul li {
+      flex-grow: 1;
+      text-align: center; }
+      .sitemap ul li a {
+        color: #ffff; }
+
 @media (min-width: 640px) {
   .navbar-brand {
     width: 31%; }

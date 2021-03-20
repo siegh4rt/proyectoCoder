@@ -71,6 +71,14 @@ const contactForm = `
             <button>Enviar</button>
         </div>
     </div>
+    <hr>
+    <div class="sitemap">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="reservas.html">Reservas</a></li>
+            <li><a href="perfil.html">Perfil</a></li>
+        </ul>
+    </div>
 `;
 
 document.addEventListener("DOMContentLoaded", function(event) {

@@ -354,6 +354,26 @@ footer {
   width: 100%;
 }
 
+.sitemap {
+  margin-bottom: 56px;
+
+  ul {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    padding: 0;
+
+    li {
+      flex-grow: 1;
+      text-align: center;
+
+      a {
+        color: $white;
+      }
+    }
+  }
+}
+
 @media (min-width: 640px) {
   .navbar-brand {
     width: 31%;
